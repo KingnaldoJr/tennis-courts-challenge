@@ -58,7 +58,7 @@ public class TennisCourtController extends BaseRestController {
             @ApiResponse(code = 406, message = "Not Acceptable", response = ErrorDetails.class),
             @ApiResponse(code = 500, message = "Internal Server Error", response = ErrorDetails.class)
     })
-    @GetMapping("/{id}")
+    @GetMapping("/{id}/schedules")
     public ResponseEntity<TennisCourtDTO> findTennisCourtWithSchedulesById(@PathVariable(value = "id") @Valid Long tennisCourtId) {
         return ResponseEntity.ok(tennisCourtService.findTennisCourtWithSchedulesById(tennisCourtId));
     }
